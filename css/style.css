@@ -559,6 +559,10 @@ footer p{
 }
 }
 /*Funcionamiento*/
+.funcion {
+  top: 20px;
+  position: relative;
+}
 .maceta{
   position: relative;
 }
