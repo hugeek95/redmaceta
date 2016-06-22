@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+      <title>Panel administración</title>
+
+       <!-- {{ Html::style('css/app.css') }}  -->
+        
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,800italic,400italic,600,600italic,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+    <body>
+
+    <!--Navegador-->
+    <div class="navbar-fixed green">
+      <nav class="red">
+      <div class="nav-wrapper black">
+        <a href="index.html" class="brand-logo"><img src="img/png/red.png" alt="" /></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="nuevo_producto.html">Nuevo producto</a></li>
+          <li><a href="alta_productors.html">Alta productor</a></li>
+          <li><a href="galeria_productors.html">Productores </a></li>
+          <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="nuevo_producto.html">Nuevo producto</a></li>
+          <li><a href="alta_productors.html">Alta productor</a></li>
+          <li><a href="galeria_productors.html">Productores </a></li>
+          <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
+        </ul>
+      </div>
+      </nav>
+    </div>
+    <!--/Navegador-->
+        
+        </div>
+    
+    
+        <div>
+            <p/>
+            <fieldset>
+            <legend><h4>Nuevo producto</h4></legend>
+                <form action="" method="post" enctype="multipart/form-data">       
+                    
+                    <div class="file-field input-field">
+                      <div class="btn white" style="color:black; font-weight:bolder;">
+                        <span>Cargar imagen</span>
+                        <input type="file" multiple>
+                      </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Agregue una imagen del producto">
+                      </div>
+                    </div>
+                    
+                    <input name="nombre" type="text" value="" class="input-field col s12 m6" placeholder="Nombre" required>
+                    <input name="Precio unitario" type="number" value="" class="input-field col s12 m6" placeholder="Precio unitario (MX)" required>
+                     <select name="selectcurso">
+  <?php
+ while($lista=mysqli_fetch_assoc($resultado_consulta_mysql))
+   echo "<option  value='".$lista["curso"]."'>"."</option>"; 
+  ?>
+</select>       
+                <select class="browser-default">
+                    <option value="" disabled selected>Nombre del productor</option>
+                    
+                     <?php  while($lista=mysqli_fetch_assoc($resultado_consulta_mysql))
+                       echo "<option  value='".$lista["productor"]."'>"."</option>"; 
+                      ?>
+                    
+                    <option value="1">Coco Joe</option>
+                  </select>
+                    
+                    <input name="Tipo de pieza" type="text" value="" class="input-field col s12 m6" placeholder="Tipo de pieza (kg, caja, litro, botella, bolsa...)" required>
+                      <label>Categoría</label>
+                  <select class="browser-default">
+                    <option value="" disabled selected>Elija una opción</option>
+                    <option value="1">Horneado</option>
+                    <option value="2">Fruta</option>
+                    <option value="3">Hortaliza</option>
+                    <option value="4">Bebida</option>
+                    <option value="5">Derivado animal</option>
+                    <option value="6">Condimento</option>
+                    <option value="7">Tradicional</option>
+                  </select>
+            <br/>
+                    <input type="submit" class="waves-effect waves-light btn">
+                </form>
+            </fieldset>
+        </div>
+        
+        
+    <!-- /Inicio -->
+    
+    
+    <footer class="page-footer black">
+        <div class="row">
+              <div class="col l4 push-l4 m4 push-m4 s12">
+                <img class="img-responsive" src="img/png/ilus_red.png" alt="Únete" />
+                <p class="white-text">Únete a la red</p>
+              </div>
+              <div class="col l4 pull-l4 pull-m4 m4 s12">
+                <a href="https://www.youtube.com/channel/UCgfJfuLthCYz6ojpH8xHq1g" target="_blank"><img class="img-responsive" src="img/png/redes_youtube.png" alt="Canal de youtube" /></a>
+                <a href="https://www.youtube.com/channel/UCgfJfuLthCYz6ojpH8xHq1g" target="_blank"><img class="img-responsive" src="img/png/redes_insta.png" alt="Instagram" /></a>
+                <a href="https://www.facebook.com/redmaceta/?fref=ts" target="_blank"><img class="img-responsive" src="img/png/redes_face.png" alt="Facebook" /></a>
+                <a href="https://www.youtube.com/channel/UCgfJfuLthCYz6ojpH8xHq1g" target="_blank"><img class="img-responsive" src="img/png/redes_twitter.png" alt="Twitter" /></a>
+              </div>
+              <div class="col l4 m4 s12 patron">
+              </div>
+        </div>
+      <div class="footer-copyright white">
+        <div class="container center-align term">
+        <h6 class="black-text">Términos y condiciones</h6>
+        <p class="black-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+        </div>
+      </div>
+    </footer>
+    <!--/Footer-->
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    </body>
+</html>
